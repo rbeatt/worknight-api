@@ -1,6 +1,6 @@
-# as-team1-api
+# Worknight API
 
-Short backend service used to manage job roles and related data (capabilities, competencies, banding, etc.). Built during the Kainos Academy programme as part of a small team.
+Worknight API is a lightweight backend service used to manage job roles and related data (capabilities, competencies, banding, etc.). Built during the Kainos Academy programme as part of a small team.
 
 ## Problem statement
 There was no single source of truth for job roles and the related metadata (job descriptions, capabilities, competencies, banding). This made it time-consuming and error-prone for employees and recruitment admins to find or update role information.
@@ -20,18 +20,14 @@ Provide a lightweight RESTful backend that lets Kainos employees and recruitment
 
 ## Running the application
 1. Build and run with Maven or your preferred IDE; the main class is `trueApplication`.
-2. The application exposes REST endpoints; a Swagger UI is available at the deployed service (see below) or locally if Swagger is enabled.
+2. The application exposes REST endpoints; a Swagger UI is available at the deployed service (if enabled locally).
 
 Common commands:
 - mvn clean package
 - mvn test
 
 ## Deployment
-The repository includes a GitHub Actions workflow that builds a Docker image and deploys the service to Amazon ECS.
-
-## Live service
-A deployed instance of the service (read-only) is available at:
-https://ebbxsctpj8.eu-west-1.awsapprunner.com/swagger#/Commit%20Connoisseurs%20API/getAllJobRoles
+This repository previously included CI and deployment configuration for AWS; those files have been removed for public sharing. The application can still be containerised and deployed using the included Dockerfile template (removed) and existing build scripts if reconfigured.
 
 ## Testing
 - Unit and integration tests are implemented with JUnit and Mockito.
@@ -39,7 +35,7 @@ https://ebbxsctpj8.eu-west-1.awsapprunner.com/swagger#/Commit%20Connoisseurs%20A
 
 ## Linting
 - Code formatting is enforced using Maven Spotless.
-- Husky Git hooks run Spotless on commit to ensure formatting consistency.
+- Husky Git hooks were used in development to enforce formatting; hooks were removed for public sharing.
 
 ## Personal contributions
 I contributed the following areas in this project:
@@ -48,13 +44,11 @@ I contributed the following areas in this project:
 
 These contributions include work across controller, service, validator and DAO layers and were delivered during the sprint-based development cycle.
 
+## Repository cleanup for sharing
+This repository has been prepared for public review. CI workflows, deployment configuration and any files that contained account-specific settings or secrets were removed to protect credentials and third-party accounts. A backup branch containing the original history was created during cleanup but has now been removed from the remote repository. The codebase retains application logic, tests and supporting scripts useful for reviewers.
+
+If you want a fully clean history (no prior commits or author metadata), the repository was reinitialized during cleanup; contact me if you need the archived history restored.
+
 ## Notes for reviewers
 - See `src/main/java` for the implementation and `test/` for unit and integration tests.
 - SQL migration and test data are available in the `scripts/` folder.
-
-## Repository cleanup for sharing
-This repository has been prepared for public review. CI workflows, deployment configuration and any files that contained account-specific settings or secrets have been removed or redacted to protect credentials and third-party accounts. The codebase retains application logic, tests and supporting scripts useful for reviewers.
-
-If you want a fully clean history (no prior commits or author metadata), you can remove the Git history and reinitialize the repository before pushing to a new account — see the steps in this README or ask me to perform that for you.
-
-License: (add license if desired)
