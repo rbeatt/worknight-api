@@ -23,8 +23,8 @@ Provide a lightweight RESTful backend that lets Kainos employees and recruitment
 2. The application exposes REST endpoints; a Swagger UI is available at the deployed service (if enabled locally).
 
 Common commands:
-- mvn clean package
-- mvn test
+- `mvn clean package`
+- `mvn test`
 
 ## Deployment
 This repository previously included CI and deployment configuration for AWS; those files have been removed for public sharing. The application can still be containerised and deployed using the included Dockerfile template (removed) and existing build scripts if reconfigured.
@@ -45,9 +45,7 @@ I contributed the following areas in this project:
 These contributions include work across controller, service, validator and DAO layers and were delivered during the sprint-based development cycle.
 
 ## Repository cleanup for sharing
-This repository has been prepared for public review. CI workflows, deployment configuration and any files that contained account-specific settings or secrets were removed to protect credentials and third-party accounts. A backup branch containing the original history was created during cleanup but has now been removed from the remote repository. The codebase retains application logic, tests and supporting scripts useful for reviewers.
-
-If you want a fully clean history (no prior commits or author metadata), the repository was reinitialized during cleanup; contact me if you need the archived history restored.
+This repository has been prepared for public review. CI workflows, deployment configuration and any files that contained account-specific settings or secrets were removed to protect credentials and third-party accounts.
 
 ## Notes for reviewers
 - See `src/main/java` for the implementation and `test/` for unit and integration tests.
